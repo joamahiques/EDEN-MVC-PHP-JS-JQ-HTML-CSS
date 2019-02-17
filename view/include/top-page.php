@@ -24,9 +24,11 @@
 		<link rel="stylesheet" href="view/css/form.css">
 		<link rel="stylesheet" href="view/css/style.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<link href="view/js/exclude.html" rel="import"/>
 		<!-- general js -->
 		<script src="view/js/lang/lang2.js"></script>
 		<script src="view/js/functions.js"></script>
+		
 		<!-- components js -->
 		<script src="components/apis/clubrural/clubrural.js"></script>
 		<script src="components/modal/view/modal2.js"></script>	
@@ -41,10 +43,4 @@
 		<script src="module/home/view/js/slider.js"></script>
 		<script src="module/home/view/js/functionshome.js"></script>
 		<script src="module/shop/view/js/functionsshop.js"></script>
-			  
-	  
-	<!-- google apis -->
-	<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYHdEqOUAWAQfT7EH1aTmfTQ03bINOhPs&callback=initMap">
-    </script>
 	</head>
