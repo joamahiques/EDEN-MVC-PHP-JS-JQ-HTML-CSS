@@ -1,0 +1,75 @@
+/* #menu{
+    position: absolute;
+    top: 0;
+    width: 100%;
+} */
+.menu_block  {
+	z-index: 50;
+	padding: 0px 0 0;
+	background-color: #e7e6d4e0;;
+	position: relative;
+	/* padding: 31px 0 19px; */
+
+}
+
+.page1 .menu_block {
+	padding: 27px 0 20px;
+}
+
+.menu_block nav {
+	/* padding-left: 73px; */
+    font-family: 'Marvel', sans-serif;
+}
+
+
+nav>.sf-menu {
+	z-index: 990;
+	text-align: center;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+@media screen and (max-width: 1032px)  { 
+	nav>.sf-menu {
+		z-index: 990;
+		text-align: center;
+		position: relative;
+		display: flex;
+		justify-content: space-around;
+	}
+}
+nav{ position:relative;padding: 0px 0 0 0;}
+.sf-menu ul {position:absolute;top:-999px; display:none;/* left offset of submenus need to match (see below) */}
+.sf-menu li {float:left;position:relative; }
+.sf-menu>li {
+	z-index: 900;
+	position: relative;
+	z-index: 5;
+	font-size: 22px;
+	line-height: 30px;
+}
+
+/* .sf-menu>li+li {
+	 margin-left: 124px; 
+} */
+
+
+.sf-menu>li>ul>li {
+  float: none;
+  position: static;
+}
+
+
+.sf-menu>li>a{
+	text-align: center;
+	display: block;
+	position: relative;
+	z-index: 999;
+	color: #5f604b;
+
+
+}
+
+.sf-menu>li>a:hover {
+	color: #ce9f56;
+}
