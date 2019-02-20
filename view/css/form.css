@@ -237,7 +237,7 @@ div.contact{
 	width: 45%;
 	height: 458px;
 }
-#form {
+#form{
 	padding-top: 5px;
 }
 
@@ -257,7 +257,7 @@ div.contact{
 }
 
 
-#form textarea {
+#form textarea{
 	width: 100%;
 	height:193px;
 	position: relative;
@@ -278,7 +278,7 @@ div.contact{
 
 
 
-#form ._placeholder {
+#form ._placeholder{
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
 	-webkit-transition: 0.5s ease;
@@ -304,15 +304,15 @@ div.contact{
 	display: none;
 }
 
-#form ._placeholder.focused {
+#form ._placeholder.focused{
 	opacity: 0.3;
 }
 
 
-#form .message ._placeholder {
+#form .message ._placeholder{
 	height: 100% !important;
 }
-#form label {
+#form label{
 	position:relative;
 	display: block;
 	min-height: 41px;
@@ -321,13 +321,13 @@ div.contact{
 	width: 100%;
 }
 
-#form label.message {
+#form label.message{
 	width: 100%;
 	position: relative;
 	margin-left: 0;
 }
 
-#form .error-message, #form .empty-message {
+#form .error-message, #form .empty-message{
 	color: #E02A05;
 	font-size: 10px;
 	line-height:14px;
@@ -349,14 +349,8 @@ div.contact{
 	margin-bottom: 3px;
 }
 
-/*#form .message .error-message, #form .message .empty-message {
-	bottom: -16px;
-}*/
 
-
-
-
-#form .invalid .error-message, #form .empty .empty-message {
+#form .invalid .error-message, #form .empty .empty-message  {
 	opacity: 1;
 }
 .contactbtn{
@@ -367,23 +361,6 @@ div.contact{
     display: inline-block;
     text-align: center;
 }
-/* .btns {
-	text-align: right;
-	padding-top: 42px;
-	font-size: 0;
-	line-height: 0;
-	margin-bottom: 43px;
-
-}
-
-.btns a.btn {
-	margin: 0;
-	cursor: pointer;
-}
-
-.btns a.btn+a.btn {
-	margin-left: 22px;
-} */
 
 .message br {
 	height: 0;
@@ -419,3 +396,8 @@ div.contact{
 	position: relative;	
 }
 
+/* login y register */
+
+.errorlogin::-webkit-input-placeholder {
+    color: red;
+ }

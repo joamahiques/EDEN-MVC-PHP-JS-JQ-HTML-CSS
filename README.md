@@ -22,7 +22,7 @@ Otras tecnologías:
 -jqwidgets.com (solución al problema en páginas donde no hay selector en el DOM)
 -jqueryui.com datepicker
 -$AJAX
--API Clubrural.com
+-API Clubrural.com ( por geolocalización y por provincias)
 -API geoapi.es
 -Google Maps
 -Slider en páguina Home en jq (sin plugin)
@@ -60,7 +60,7 @@ Other technologies:
 -jqwidgets.com(solution to the problem on pages where there is no selector in the sun)
 -jqueryui.com datepicker
 -$AJAX
--API Clubrural.com
+-API Clubrural.com (by geolocation and by provinces)
 -API geoapi.es
 -Google Maps
 -Slider in page Home in jq (without plugin)

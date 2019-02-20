@@ -23,6 +23,8 @@
 		<!-- mis links -->
 		<link rel="stylesheet" href="view/css/form.css">
 		<link rel="stylesheet" href="view/css/style.css">
+		<link rel="stylesheet" href="view/css/loginform.css">
+
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 		<link href="view/js/exclude.html" rel="import"/>
 		<!-- general js -->
@@ -43,4 +45,5 @@
 		<script src="module/home/view/js/slider.js"></script>
 		<script src="module/home/view/js/functionshome.js"></script>
 		<script src="module/shop/view/js/functionsshop.js"></script>
+		<script src="module/login/view/js/validatelogin.js"></script>
 	</head>
