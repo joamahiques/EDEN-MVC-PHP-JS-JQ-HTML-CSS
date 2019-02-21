@@ -5,7 +5,7 @@ $(document).ready(function () {
                 
         type: "GET",
        // dataType: "Json",
-        url:"http://apiv1.geoapi.es/provincias?type=JSON&key=3ad4830012c35080613cd2d7c035c55a191d137e22977496db224724cfd53ad0&sandbox=0",
+        url:"http://apiv1.geoapi.es/provincias?type=JSON&key="+keygeo+"&sandbox=0",
     })
     .done(function( data, textStatus, jqXHR ) {
         //console.log(data);

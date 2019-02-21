@@ -54,7 +54,7 @@
    
 </section>
 
-
+<!-- LOGIN  -->
 <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
     <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
         <ul class="cd-switcher">
@@ -84,8 +84,8 @@
                 </p>
 
                 <p class="fieldset">
-                    <button class="btn"></button>
-                    <input class="full-width" type="submit" value="Login">
+                    <button type="submit" class="full-width">Login</button>
+                    <!-- <input class="full-width" type="submit" value="Login"></button> -->
                 </p>
             </form>
             
@@ -105,6 +105,7 @@
                     <label class="image-replace cd-email" for="signup-email">E-mail</label>
                     <input class="full-width has-padding has-border" id="signup-email" name="mail" type="text" placeholder="E-mail">
                     <span class="cd-error-message"></span>
+                    <span id="error_register"><span class="cd-error-message"></span></span>
                 </p>
 
                 <p class="fieldset">
@@ -120,15 +121,17 @@
                     <a href="#0" class="hide-password">Hide</a>
                     <span class="cd-error-message"></span>
                 </p>
-
+                <!-- <p class="fieldset" id="error_register">
+                <span  id="error_register"></span>
+                </p> -->
                 <p class="fieldset">
                     <input type="checkbox" id="accept-terms">
                     <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
                 </p>
 
                 <p class="fieldset">
-                     <button class="btn"></button>
-                    <input class="full-width has-padding" type="submit" value="Create account">
+                <button type="submit" class="full-width">Create account</button>
+                    <!-- <input class="full-width has-padding" type="submit" value="Create account"> -->
                 </p>
             </form>
 

@@ -1,17 +1,6 @@
 function valide_login(){
 	var mailp = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
-	console.log("valide_login");
-	//User
-	// if(document.formlogin.user.value.length === 0){
-	// 	console.log("validenombreee");
-	// 	//document.getElementById('e_user').innerHTML = "Tienes que escribir el usuario";
-	// 	document.getElementsByName('user')[0].placeholder='Tienes que escribir el usuario';
-	// 	$("#imputname").addClass('.errorlogin');
-	// 	document.formlogin.user.focus();
-	// 	return 0;
-	// }
-	// //document.getElementById('e_user').innerHTML = "";
-	// document.getElementById('e_user').innerHTML = "Name:";
+	//console.log("valide_login");
 
 	//Mail
 	if(document.formlogin.mail.value.length === 0){
@@ -145,14 +134,37 @@ $(document).ready(function(){
 		if (valide_register() != 0) {
 			var data = $("#formregister").serialize();
 			console.log(data);
-			// $.ajax({
-			// 	type : 'POST',
-			// 	url  : 'module/login/controller/controller_login.php?&op=register&' + data,
-			// 	data : data,
-			// 	beforeSend: function(){	
-			// 		console.log(data)
-			// 		$("#error_register").fadeOut();
-			// 	},
+			$.ajax({
+				type : 'POST',
+				url  : 'module/login/controller/controller-login.php?&op=register&' + data,
+				data : data,
+				beforeSend: function(){	
+					console.log(data)
+					$("#error_register").fadeOut();
+				}
+			})
+				.done(function( response, textStatus, jqXHR ) {
+					console.log(response);
+
+					
+					if(response==="ok"){
+						console.log("OOKK");
+						setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
+					}else if (response=="okay") {
+						alert("Debes realizar login para completar tu compra");
+						setTimeout(' window.location.href = window.location.href; ',1000);
+					}else{
+						console.log("error-register fallo validateloginphp");
+						$("#error_register").fadeIn(1000, function(){						
+							$("#error_register").addClass('has-error').children('span').addClass('is-visible').html(response);
+
+						});
+					}
+					 })
+				.fail(function( response, textStatus, jqXHR ) {
+					
+					console.log("FALLOOOO");
+				})
 			// 	success: function(response){						
 			// 		if(response==="ok"){
 			// 			setTimeout(' window.location.href = "index.php?page=controller_home&op=list"; ',1000);
@@ -165,7 +177,7 @@ $(document).ready(function(){
 			// 			});
 			// 		}
 			//   }
-			// });
+		
 		}
 	});
 //});

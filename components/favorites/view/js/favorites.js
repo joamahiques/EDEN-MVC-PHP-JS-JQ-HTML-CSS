@@ -16,10 +16,10 @@ $(document).ready(function () {
         .done(function( data, textStatus, jqXHR ) {
         //console.log( data );
             $.each(data, function(i, item) {///bucle para buscar los elementos que coincidan con los id de favoritos y los pintamos
-                console.log( item.nombre );
+                // console.log( item.nombre );
                 var id= document.getElementById(item.nombre);
                 //var id2= $('"#'+item.nombre+'"')
-                console.log( id );
+                // console.log( id );
                 //console.log( id2 );
                 $(id).children("i").addClass("fas");    
             });

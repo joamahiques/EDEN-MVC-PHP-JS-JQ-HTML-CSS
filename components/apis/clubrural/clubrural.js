@@ -27,7 +27,7 @@ $(document).ready(function(){
                         var idprovi=item.id;
                                 $.ajax({
                                     type: "GET",
-                                    url:"https://api.clubrural.com/api.php?claveapi=efb2622d112ae160b39d37c2e9af1deb&type=provincias&idprov="+idprovi
+                                    url:"https://api.clubrural.com/api.php?claveapi="+keyclub+"&type=provincias&idprov="+idprovi
                                     
                                 })
                                 .done(function( data, textStatus, jqXHR ) {
@@ -87,7 +87,7 @@ $(document).ready(function(){
     
     }else{
             console.log("Browser doesn't support geolocation!");
-            url="https://api.clubrural.com/api.php?claveapi=efb2622d112ae160b39d37c2e9af1deb&type=gmaps&lat=38.8220593&lng=-0.6063927&limitkm="+numeroAleatorio(1,80);
+            url="https://api.clubrural.com/api.php?claveapi="+keyclub+"&type=gmaps&lat=38.8220593&lng=-0.6063927&limitkm="+numeroAleatorio(1,80);
         // console.log(url);
         
             $.ajax({
@@ -138,7 +138,7 @@ function geolocation(id) {
             var latitude=position.coords.latitude;
             var longitude=position.coords.longitude;
             //console.log("Found your location nLat : "+latitude+" nLang :"+longitude);
-            url="https://api.clubrural.com/api.php?claveapi=efb2622d112ae160b39d37c2e9af1deb&type=gmaps&lat="+latitude+"&lng="+longitude+"&limitkm="+numeroAleatorio(1,80);
+            url="https://api.clubrural.com/api.php?claveapi="+keyclub+"&type=gmaps&lat="+latitude+"&lng="+longitude+"&limitkm="+numeroAleatorio(1,80);
             //console.log(url);
         
             $.ajax({

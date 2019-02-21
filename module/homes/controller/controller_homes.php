@@ -2,6 +2,7 @@
     
     $path = $_SERVER['DOCUMENT_ROOT'] . '/www/EDEN/'; ///opt/lampp/htdocs
     include($path . "module/homes/model/DAOhomes.php");
+    include($path . "module/homes/model/validation.php");
    
     // print_r($_SERVER['DOCUMENT_ROOT']);
     // die();
@@ -29,7 +30,7 @@
         case 'create';
         // echo "hollo";
         // die();
-           include("module/homes/model/validation.php");//AQUI validacion php
+           //include("module/homes/model/validation.php");//AQUI validacion php
             $check = true;
             $error='';
             
@@ -79,7 +80,7 @@
     
 ////////UPDATE       
         case 'update';
-            include("module/homes/model/validation.php");
+            //include("module/homes/model/validation.php");
             $check = true;
             if ($_POST){
                 //$check=validatephp();///No puedo validar en PHP en UPDATE por que los campos que valido son los que no se pueden cambiar en la validacion (onlyRead)
@@ -200,31 +201,6 @@
         
         include("module/homes/view/deleteAllHomes.php");
         break;
-
-        ////READ MODAL
-        // case 'read_modal':
-        // // echo $_GET["modal"]; 
-        // // print_r ($_GET["modal"]);
-        // // die();
-        
-        //     try{
-        //         $DAOhome = new DAOhome();
-        //     	$rdo = $DAOhome->select_home($_GET['modal']);// modal
-    
-        //     }catch (Exception $e){
-        //         echo json_encode("error");
-        //         exit;
-        //     }
-        //     if(!$rdo){
-        //         echo json_encode("error");
-        //         exit;
-        //     }else{
-        //         $home=get_object_vars($rdo);
-        //         echo json_encode($home);
-        //         //echo json_encode("error");
-        //         exit;
-        //     }
-        // break;
    
     ////DEFAULT
     default;

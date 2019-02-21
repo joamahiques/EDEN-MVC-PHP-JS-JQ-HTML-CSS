@@ -9,7 +9,7 @@
 								<li><a href="index.php?page=favorites" data-tr="Favoritos"></a></li>
 								<li><a href="index.php?page=controllershop&op=view"" data-tr="Tienda" id="btnshop"></a></li>
 								<li><a href="index.php?page=controller-contact&op=list" data-tr="Contacto"></a></li>
-								<!-- <li><a href="index.php?page=controller-login&op=view" data-tr="Login"></a></li> -->
+								<li><a href="index.php?page=controller-login&op=view" data-tr="Login"></a></li>
 								<li><a data-tr="Login" class="main-nav"></a></li>
 							</ul>
 						</nav>

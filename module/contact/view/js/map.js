@@ -1,5 +1,13 @@
 
-
+$(document).ready(function () {
+  if(document.getElementById("mapa") != null){
+    var script = document.createElement('script');
+    script.src = "https://maps.googleapis.com/maps/api/js?key="+keymaps+"&callback=initMap";
+    script.async;
+    script.defer;
+    document.getElementsByTagName('script')[0].parentNode.appendChild(script);
+  }
+})
 function initMap() {
     var ontinyent = {lat: 38.8220593, lng: -0.6063927};
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -36,4 +44,4 @@ function initMap() {
           });
         }
       
-      
+  

@@ -1,6 +1,7 @@
 <div id="contenido" class="content">
     <div class="container_12">
         <div class="flex3">
+			<div id="mapa"></div>
             <div class="contact">
                     <h2>Donde estamos:</h2>
                     <div id="map"></div>
@@ -42,3 +43,4 @@
             </div><!--flex -->
         </div><!--container12 -->
  </div> <!--primer -->
+ 
