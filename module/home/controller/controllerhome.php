@@ -1,8 +1,8 @@
 <?php
     $path = $_SERVER['DOCUMENT_ROOT'] . '/www/EDEN/';
-
+   
     include($path ."module/home/model/DAOhome.php");
-    
+    @session_start();
         switch($_GET['op']){
             
             case 'list':

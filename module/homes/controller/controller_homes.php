@@ -3,7 +3,7 @@
     $path = $_SERVER['DOCUMENT_ROOT'] . '/www/EDEN/'; ///opt/lampp/htdocs
     include($path . "module/homes/model/DAOhomes.php");
     include($path . "module/homes/model/validation.php");
-   
+    @session_start();
     // print_r($_SERVER['DOCUMENT_ROOT']);
     // die();
    

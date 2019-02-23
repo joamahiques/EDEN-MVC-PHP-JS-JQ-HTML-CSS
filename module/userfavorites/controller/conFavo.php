@@ -2,7 +2,7 @@
 
 	$path = $_SERVER['DOCUMENT_ROOT'] . '/www/EDEN/'; ///opt/lampp/htdocs
     include($path . "module/userfavorites/model/DAOfavor.php");
-	
+	@session_start();
 	//echo ('datatable confavo');
 	//die();
 	

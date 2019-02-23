@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	@session_start();
 	include("view/include/top-page.php");
 ?>
 <div id="wrapper">		
@@ -14,9 +14,20 @@
     	?>        
     </div>  
      <div id="menu">
-		 <?php
-		     include("view/include/menu.php");
-		?> 
+	 	<?php
+			if(!isset($_SESSION['type'])){
+				include("view/include/menu.php");
+			}else if ($_SESSION['type']==='client'){
+				include("view/include/menuuser.php");
+				//echo ($_SESSION['type']);
+			}else if($_SESSION['type']==='admin'){
+				include("view/include/menuadmin.php");
+				//echo ($_SESSION['type']);
+			} 
+			?>        
+		 <!-- <?php
+		    //  include("view/include/menu.php");
+		?>  -->
     </div>	
     <div id="">
     	<?php 

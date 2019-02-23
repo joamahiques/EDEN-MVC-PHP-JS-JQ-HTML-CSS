@@ -67,5 +67,18 @@ toastr.options = {
     "showMethod": "show",
     "hideMethod": "fadeOut"
   }
-
-});
+/////////// Pintar en el menú el profile
+  if (document.getElementById('btnprofile')){
+    $('#menuprofile').prepend(localStorage.getItem("user"));
+    $('#avatar').attr("src", localStorage.getItem("avatar"));
+    console.log(localStorage.getItem("avatar"));
+    //   console.log("profile");
+    //   console.log(localStorage.getItem("user"));
+      $('#menuprofile').on('click', function(){
+            $('#submenu').toggle( "slow" );
+      })
+      $('#contenido').on('click', function(){
+             $('#submenu').fadeOut( "slow" );
+      })
+  }
+});/////////ebd ready

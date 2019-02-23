@@ -3,9 +3,8 @@
     $path = $_SERVER['DOCUMENT_ROOT'] . '/www/EDEN/'; ///opt/lampp/htdocs
     include($path . "module/login/model/DAOlogin.php");
     include($path . "module/login/model/validatelogin.php");
-
-    // print_r($_SERVER['DOCUMENT_ROOT']);
-    // die();
+	@session_start();
+    
    
     
     switch($_GET['op']){
@@ -16,15 +15,9 @@
         break;
 
         case 'register':
-        //include("module/login/model/validatelogin.php");
 
                 $valide = validateregister();
-                // echo $valide['result'];
-                // echo $valide['check'];
-                // echo $valide;
-                // exit();
-                
-                //if($valide['result']){
+               
                 if(!$valide){
 					try {
 						$daologin = new DAOlogin();
@@ -42,47 +35,89 @@
 							echo 'okay';
 							exit();
 						}else{
+							
 							echo 'ok';
-							exit();	
+							exit();
+							
 						}
 					}	
 				}else{
 					echo "ERROR: Este email ya está registrado";
 					exit();
 				}
-            break;
-        
-        case 'login':
-			try {
-				$daologin = new DAOlogin();
-				$rlt = $daologin->select_login($_POST['mail']);
-			} catch (Exception $e) {
-				echo "error";
-				exit();
-			}
-			if(!$rlt){
-				echo "El usuario no existe";
-				exit();
-			}else{
-				$value = get_object_vars($rlt);
-				if (password_verify($_POST['password'],$value['password'])) {
-					if (isset($_SESSION['purchase']) && $_SESSION['purchase'] === 'on')
-						echo 'okay';
-					else
-						echo 'ok';
-					$_SESSION['type'] = $value['type'];
-					$_SESSION['user'] = $value['user'];
-					//$_SESSION['tiempo'] = time();
-					exit();
-				}else {
-					echo "No coinciden los datos";
+		break;
+			
+		case 'autologin':
+				try {
+					$daologin = new DAOlogin();
+					$rlt = $daologin->select_user($_POST['mail']);
+				} catch (Exception $e) {
+					echo "error";
 					exit();
 				}
-			}	
+				if(!$rlt){
+					echo "Error al registrarse";
+					echo ($_POST['user']);
+					exit();
+				}else{
+
+					$value = get_object_vars($rlt);
+					$_SESSION['type'] = $value['type'];
+					$_SESSION['user'] = $value['name'];
+					$_SESSION['avatar'] = $value['avatar'];
+					echo json_encode($value);
+					//echo 'ok';
+					exit();
+				}
+				break;
+
+        case 'login':
+				try {
+					$daologin = new DAOlogin();
+					$rlt = $daologin->select_user($_POST['mail']);
+				} catch (Exception $e) {
+					echo "error";
+					exit();
+				}
+				if(!$rlt){
+					echo "El usuario no existe";
+					exit();
+				}else{
+					$value = get_object_vars($rlt);
+					if (password_verify($_POST['password'],$value['userpass'])) {
+						if (isset($_SESSION['purchase']) && $_SESSION['purchase'] === 'on')
+							echo 'okay';
+						else
+							
+						$_SESSION['type'] = $value['type'];
+						$_SESSION['user'] = $value['name'];
+						$_SESSION['avatar'] = $value['avatar'];
+						//echo 'ok';
+						echo json_encode($value);
+						exit();
+					}else {
+						echo "No coinciden los datos";
+						exit();
+					}
+				}	
+				break;
+
+			
+			case 'logout':
+				error_reporting(0);
+				session_unset($_SESSION['type']);
+				session_unset($_SESSION['user']);
+				session_unset($_SESSION['avatar']);
+				session_destroy();
+				echo "home";
+				// if(session_destroy()) {
+				// 	echo "home";
+				// }
 			break;
+				
    
         default:
-			include("view/inc/error/error404.php");
+				include("view/include/error/error404.php");
 		break;
 	}
     

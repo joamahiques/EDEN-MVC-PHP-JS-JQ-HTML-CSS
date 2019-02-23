@@ -2,7 +2,7 @@
 
 	$path = $_SERVER['DOCUMENT_ROOT'] . '/www/EDEN/'; ///opt/lampp/htdocs
     include($path . "module/shop/model/DAOShop.php");
-	
+	@session_start();
 	//echo ('datatable confavo');
 	//die();
 	
@@ -121,7 +121,7 @@
                 $favor = array();///inicializamos el array
                 foreach ($rdo as $row) {
                     array_push($favor, $row);//lo rellenamos con array_push
-            }
+                }
             echo json_encode($favor);///lo pasamos a json
             exit;
         }

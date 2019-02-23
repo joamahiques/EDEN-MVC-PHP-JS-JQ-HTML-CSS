@@ -96,38 +96,44 @@ function valide_register(){
 	//document.formregister.click();
 	//document.formregister.action="index.php?page=controller_login&op=list_register";
 }
-//jQuery(document).ready(function($){
+
 $(document).ready(function(){
-	
+
+//////////////login	
 	$("#formlogin").submit(function (e) {
 		console.log("valide_login11");
 		e.preventDefault();
 		if(valide_login() != 0){
 			var data = $("#formlogin").serialize();
+			//var data=$("#signin-password").val();
 			console.log(data);
-			// $.ajax({
-			// 	type : 'POST',
-			// 	url  : 'module/login/controller/controller_login.php?&op=login&' + data,
-			// 	data : data,
-			// 	beforeSend: function(){	
-			// 		$("#error_login").fadeOut();
-			// 	},
-			// 	success: function(response){			
-			//    		console.log(response)		
-			// 		if(response=="ok"){
-			// 			setTimeout(' window.location.href = "index.php?page=controller_home&op=list"; ',1000);
-			// 		}else if (response=="okay") {
-			// 			InsertCompra(); //en cart.js
-			// 		}else{
-			// 			$("#error_login").fadeIn(1000, function(){						
-			// 				$("#error_login").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; '+response+' !</div>');
-			// 			});
-			// 		}
-			// 	}
-			// });
-		}
+			$.ajax({
+				type : 'POST',
+				url  : 'module/login/controller/controller-login.php?&op=login&' + data,
+				data :data,
+				dataType: 'json',
+				beforeSend: function(){	
+					$("#error_login").fadeOut();
+				}
+			})
+			.done(function(data){			
+				console.log(data)		
+				if(data!=""){
+					localStorage.setItem("user", data.name);
+					localStorage.setItem("type", data.type);
+					localStorage.setItem("avatar", data.avatar);
+					setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
+				}else if (data=="okay") {
+					InsertCompra(); //en cart.js
+				}else if (data=="No coinciden los datos") {
+					$("#error_login").fadeIn(1000, function(){						
+						$("#error_login").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; '+response+' !</div>');
+					});
+				}///end if
+			});
+		};///end if
 	});
-
+////////////register
 	$("#formregister").submit(function (e) {
 		console.log("valide_register11");
 		e.preventDefault();
@@ -143,13 +149,34 @@ $(document).ready(function(){
 					$("#error_register").fadeOut();
 				}
 			})
+			////si nos registramos: 
 				.done(function( response, textStatus, jqXHR ) {
 					console.log(response);
-
-					
+					console.log(data);
+					///// autologin una vez registrado
 					if(response==="ok"){
 						console.log("OOKK");
-						setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
+						$.ajax({
+							type : 'POST',
+							url  : 'module/login/controller/controller-login.php?&op=autologin&' + data,
+							data :data,
+							dataType: 'json',
+							beforeSend: function(){	
+								$("#error_login").fadeOut();
+							}
+						})
+						.done(function(data){			
+							console.log(data)		
+							if(data!=""){
+								localStorage.setItem("user", data.name);
+								localStorage.setItem("type", data.type);
+								localStorage.setItem("avatar", data.avatar);
+								setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
+							}///end if
+						})
+						
+							.fail( function(response){console.log(response)	});
+						
 					}else if (response=="okay") {
 						alert("Debes realizar login para completar tu compra");
 						setTimeout(' window.location.href = window.location.href; ',1000);
@@ -160,27 +187,32 @@ $(document).ready(function(){
 
 						});
 					}
-					 })
+				})
 				.fail(function( response, textStatus, jqXHR ) {
 					
 					console.log("FALLOOOO");
 				})
-			// 	success: function(response){						
-			// 		if(response==="ok"){
-			// 			setTimeout(' window.location.href = "index.php?page=controller_home&op=list"; ',1000);
-			// 		}else if (response=="okay") {
-			// 			alert("Debes realizar login para completar tu compra");
-			// 			setTimeout(' window.location.href = window.location.href; ',1000);
-			// 		}else{
-			// 			$("#error_register").fadeIn(1000, function(){						
-			// 				$("#error_register").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; '+response+'</div>');
-			// 			});
-			// 		}
-			//   }
+			
 		
 		}
 	});
-//});
+///////////logout
+	$("#btnlogout").on('click', function () {
+		console.log("logout");
+		$.ajax({
+			type : 'GET',
+			url  : 'module/login/controller/controller-login.php?&op=logout',
+		})
+			.done(function() {
+				
+				localStorage.removeItem('user');
+				localStorage.removeItem('avatar');
+				localStorage.removeItem('type')
+				setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
+				
+
+		})
+	});
 
 //////////////////////////////
 
