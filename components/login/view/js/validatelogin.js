@@ -37,7 +37,7 @@ function valide_login(){
 function valide_register(){
 	var mailp = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
 	
-	console.log("valide_register");
+	//console.log("valide_register");
 	//User
 	if(document.formregister.user.value.length === 0){
 		$('#signup-username').addClass('has-error').next('span').addClass('is-visible').html("EL USER ES REQUERIDO");;
@@ -92,9 +92,8 @@ function valide_register(){
 		return 0;
 	}
 	$('#signup-rpassword').removeClass('has-error').next().next('span').removeClass('is-visible');
-
-	//document.formregister.click();
-	//document.formregister.action="index.php?page=controller_login&op=list_register";
+	///terms
+	
 }
 
 $(document).ready(function(){
@@ -109,7 +108,7 @@ $(document).ready(function(){
 			console.log(data);
 			$.ajax({
 				type : 'POST',
-				url  : 'module/login/controller/controller-login.php?&op=login&' + data,
+				url  : 'components/login/controller/controller-login.php?&op=login&' + data,
 				data :data,
 				dataType: 'json',
 				beforeSend: function(){	
@@ -122,14 +121,25 @@ $(document).ready(function(){
 					localStorage.setItem("user", data.name);
 					localStorage.setItem("type", data.type);
 					localStorage.setItem("avatar", data.avatar);
+					localStorage.setItem("email", data.email);
 					setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
 				}else if (data=="okay") {
 					InsertCompra(); //en cart.js
-				}else if (data=="No coinciden los datos") {
-					$("#error_login").fadeIn(1000, function(){						
-						$("#error_login").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; '+response+' !</div>');
-					});
+				}else if(data=="No coinciden los datos") {
+					console.log("error-login fallo logeandote");
+						$("#error_login").fadeIn(1000, function(){						
+							$("#error_login").addClass('has-error').children('span').addClass('is-visible').html(data);
+
+						});
 				}///end if
+			})
+			.fail(function( data, textStatus, jqXHR ) {
+				//console.log(response);
+				$("#error_login").fadeIn(1000, function(){						
+					$("#error_login").addClass('has-error').children('span').addClass('is-visible').append("EL USUARIO NO EXISTE");
+
+				});
+				console.log("FALLOOOOLogin");
 			});
 		};///end if
 	});
@@ -142,7 +152,7 @@ $(document).ready(function(){
 			console.log(data);
 			$.ajax({
 				type : 'POST',
-				url  : 'module/login/controller/controller-login.php?&op=register&' + data,
+				url  : 'components/login/controller/controller-login.php?&op=register&' + data,
 				data : data,
 				beforeSend: function(){	
 					console.log(data)
@@ -158,11 +168,11 @@ $(document).ready(function(){
 						console.log("OOKK");
 						$.ajax({
 							type : 'POST',
-							url  : 'module/login/controller/controller-login.php?&op=autologin&' + data,
+							url  : 'components/login/controller/controller-login.php?&op=autologin&' + data,
 							data :data,
 							dataType: 'json',
 							beforeSend: function(){	
-								$("#error_login").fadeOut();
+								$("#error_register").fadeOut();
 							}
 						})
 						.done(function(data){			
@@ -171,11 +181,12 @@ $(document).ready(function(){
 								localStorage.setItem("user", data.name);
 								localStorage.setItem("type", data.type);
 								localStorage.setItem("avatar", data.avatar);
+								localStorage.setItem("email", data.email);
 								setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
 							}///end if
 						})
 						
-							.fail( function(response){console.log(response)	});
+						 .fail( function(response){console.log(response)	});
 						
 					}else if (response=="okay") {
 						alert("Debes realizar login para completar tu compra");
@@ -201,7 +212,7 @@ $(document).ready(function(){
 		console.log("logout");
 		$.ajax({
 			type : 'GET',
-			url  : 'module/login/controller/controller-login.php?&op=logout',
+			url  : 'components/login/controller/controller-login.php?&op=logout',
 		})
 			.done(function() {
 				
@@ -229,10 +240,10 @@ $(document).ready(function(){
 
 	//open modal
 	$main_nav.on('click', function(event){
-		console.log("modal");
 		
-			console.log("modal2");
-			//limpiar formularios antes de abrir
+		
+			
+			//clean before open
 			$("#formregister")[0].reset();
 			$("#formlogin")[0].reset();
 			$(".has-error").removeClass('has-error');
@@ -319,6 +330,8 @@ $(document).ready(function(){
 		event.preventDefault();
 		$form_signup.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
 	});
+
+
 
 
 	//IE9 placeholder fallback

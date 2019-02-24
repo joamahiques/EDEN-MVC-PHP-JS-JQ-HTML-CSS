@@ -1,7 +1,8 @@
 
 $(document).ready(function () {
-    
-    var url= 'module/userfavorites/controller/conFavo.php?op=datatable';
+    console.log(localStorage.getItem("email"));
+    console.log("email");
+    var url= 'module/userfavorites/controller/conFavo.php?op=datatable&email='+localStorage.getItem("email");
     var source =
             {
                 dataType: "json",

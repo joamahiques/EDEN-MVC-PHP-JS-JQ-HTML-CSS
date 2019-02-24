@@ -15,7 +15,7 @@ Funcionalidad de la aplicación:
 -módulos:
 -Home
 -Homes(CRUD)
--Userfavorites
+-Userfavorites( favoritos para cada usuario )
 -Shop
 -Contact
 
@@ -61,7 +61,7 @@ Functionality of the application:
 -Modules:
 -Home
 -Homes (CRUD)
--Userfavorites
+-Userfavorites (favorites for each user)
 -Contact
 -Shop
 -Login y register

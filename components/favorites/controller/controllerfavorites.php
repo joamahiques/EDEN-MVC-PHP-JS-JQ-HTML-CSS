@@ -8,7 +8,7 @@
             case 'favorites':
                 try{
                     $DAOFavorites = new DAOFavorites();
-                    $rdo = $DAOFavorites->insertFavorites($_GET['id']);
+                    $rdo = $DAOFavorites->insertFavorites($_GET['id'],$_GET['email']);//$_SESSION['mail]
         
                 }catch (Exception $e){
                     $callback = 'index.php?page=503';
@@ -19,7 +19,7 @@
             case 'readfavorites':
                 try{
                     $DAOFavorites = new DAOFavorites();
-                    $rdo = $DAOFavorites->readFavorites();
+                    $rdo = $DAOFavorites->readFavorites($_GET['email']);
         
                 }catch (Exception $e){
                     echo json_encode("error");
@@ -42,7 +42,7 @@
             
                try{
                    $DAOFavorites = new DAOFavorites();
-                   $rdo = $DAOFavorites->deleteFavorites($_GET['id']);
+                   $rdo = $DAOFavorites->deleteFavorites($_GET['id'],$_GET['email']);
                }catch (Exception $e){
                    //echo ("conexion");
                    $callback = 'index.php?page=503';

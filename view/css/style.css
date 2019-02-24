@@ -114,7 +114,8 @@ a {
 	outline: none;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
-	-webkit-transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    cursor: pointer;
 }
 
 a:hover {
@@ -449,7 +450,7 @@ header h1 a img {
 header.header {
     background: url(../img/masqi-predeter.jpg) center  no-repeat;
 	display: block;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* padding: 42px 0 0; */
     position: relative;
     background-size: cover;

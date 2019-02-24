@@ -19,19 +19,18 @@
 				include("view/include/menu.php");
 			}else if ($_SESSION['type']==='client'){
 				include("view/include/menuuser.php");
-				//echo ($_SESSION['type']);
+				//echo ($_SESSION['mail']);
 			}else if($_SESSION['type']==='admin'){
 				include("view/include/menuadmin.php");
-				//echo ($_SESSION['type']);
+				//echo ($_SESSION['mail']);
 			} 
 			?>        
-		 <!-- <?php
-		    //  include("view/include/menu.php");
-		?>  -->
+		 
     </div>	
     <div id="">
     	<?php 
-		    include("view/include/pages.php"); 
+			include("view/include/pages.php"); 
+			include("components/login/view/login.html")//modal login
 		?>        
     </div>
     <div id="footer">   	   

@@ -1,11 +1,13 @@
 <body id="top">
 <!--==============================header=================================-->
-		<header class="header">
+
+<header class="header">
 			<div class="container_12">
 				<div class="grid_12">
+				<!-- <div id="rel"> -->
 					<h1>
 						<a href="index.php?page=controllerhome&op=list">
-							<img src="view/img/logo.png" alt="The healthy homes">
+							<img src="view/img/logo.png" alt="Eden">
 						</a>
 					</h1>
 				</div>
@@ -24,8 +26,9 @@
 							 	<input id="autocom" type="text" />
    						 	</div>	
    						
-							<div ><a id="searchlist">BUSCAR</a></div>   <!--<button class="btn">BUSCAR</button>-->
-           			 </form>
+							<div ><a id="searchlist">BUSCAR</a></div>   
+						</form>
+ <!-- </div>rel  -->
 			</div>
 			<div class="clear"></div>
 			<?php

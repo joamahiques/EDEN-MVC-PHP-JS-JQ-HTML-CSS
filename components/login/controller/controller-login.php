@@ -1,8 +1,8 @@
 <?php
     
     $path = $_SERVER['DOCUMENT_ROOT'] . '/www/EDEN/'; ///opt/lampp/htdocs
-    include($path . "module/login/model/DAOlogin.php");
-    include($path . "module/login/model/validatelogin.php");
+    include($path . "components/login/model/DAOlogin.php");
+    include($path . "components/login/model/validatelogin.php");
 	@session_start();
     
    
@@ -65,6 +65,7 @@
 					$_SESSION['type'] = $value['type'];
 					$_SESSION['user'] = $value['name'];
 					$_SESSION['avatar'] = $value['avatar'];
+					$_SESSION['mail'] = $value['email'];
 					echo json_encode($value);
 					//echo 'ok';
 					exit();
@@ -92,6 +93,7 @@
 						$_SESSION['type'] = $value['type'];
 						$_SESSION['user'] = $value['name'];
 						$_SESSION['avatar'] = $value['avatar'];
+						$_SESSION['mail'] = $value['email'];
 						//echo 'ok';
 						echo json_encode($value);
 						exit();

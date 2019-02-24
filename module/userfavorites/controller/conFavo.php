@@ -19,7 +19,7 @@
 		//die();
             try{
 				$daofavor = new DAOfavor();
-				$rdo = $daofavor->selectfavor();
+				$rdo = $daofavor->selectfavor($_GET['email']);
 				
 			} catch(Exception $e){
 				echo json_encode("error");

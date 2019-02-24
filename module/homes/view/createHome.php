@@ -2,7 +2,7 @@
 
 <div id="contenido" class="content">
 <div class="container_12">
-<div class="grid_6">
+<div>
 	<!-- <div class="row"> -->
 				<h3 class="botno">ALTA NUEVA CASA
 				<?php

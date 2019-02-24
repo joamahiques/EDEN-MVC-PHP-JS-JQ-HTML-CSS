@@ -1,7 +1,7 @@
 
 <div id="contenido" class="content">
 <div class="container_12">
-<div class="grid_6">
+<div>
 
             <h3 class="botno">ACTUALIZAR CASA
                 <?php
@@ -25,56 +25,10 @@
     <p>
         <label for="provincia" class="update">Provincia</label>
         <select  name="provincia" id="provincia">
-            <option <?php  if  ( $home['provincia']=="Alava")  echo  'selected'  ;  ?> value="Alava">Álava</option>
-            <option <?php  if  ( $home['provincia']=="Albacete")  echo  'selected'  ;  ?> value="Albacete">Albacete</option >
-            <option <?php  if  ( $home['provincia']=="Alicante")  echo  'selected'  ;  ?> value="Alicante"> Alicante</option>
-            <option <?php  if  ( $home['provincia']=="Almeria")  echo  'selected'  ;  ?> value="Almeria">Almería</option>
-            <option <?php  if  ( $home['provincia']=="Asturias")  echo  'selected'  ;  ?> value="Asturias">Asturias</option>
-            <option <?php  if  ( $home['provincia']=="Avila")  echo  'selected'  ;  ?> value="Avila">Badajoz</option >
-            <option <?php  if  ( $home['provincia']=="Badajoz")  echo  'selected'  ;  ?> value="Badajoz"> Alicante(Comunidad Valenciana)</option>
-            <option <?php  if  ( $home['provincia']=="Barcelona")  echo  'selected'  ;  ?> value="Barcelona">Barcelona</option>
-            <option <?php  if  ( $home['provincia']=="Burgos")  echo  'selected'  ;  ?> value="Burgos">Burgos</option>
-            <option <?php  if  ( $home['provincia']=="Caceres")  echo  'selected'  ;  ?> value="Caceres">Cáceres</option >
-            <option <?php  if  ( $home['provincia']=="Cadiz")  echo  'selected'  ;  ?> value="Cadiz"> Cádiz</option>
-            <option <?php  if  ( $home['provincia']=="Cantabria")  echo  'selected'  ;  ?> value="Cantabria">Cantabria</option>
-            <option <?php  if  ( $home['provincia']=="Castellon")  echo  'selected'  ;  ?> value="Castellon">Castellón</option>
-            <option <?php  if  ( $home['provincia']=="CiudadReal")  echo  'selected'  ;  ?> value="CiudadReal">Ciudad Real</option >
-            <option <?php  if  ( $home['provincia']=="Cordoba")  echo  'selected'  ;  ?> value="Cordoba">Córdoba</option>
-            <option <?php  if  ( $home['provincia']=="Cuenca")  echo  'selected'  ;  ?>value="Cuenca">Cuenca</option>
-            <option <?php  if  ( $home['provincia']=="Gerona")  echo  'selected'  ;  ?>value="Gerona">Gerona</option>
-            <option <?php  if  ( $home['provincia']=="Granada")  echo  'selected'  ;  ?>value="Granada">Granada </option >
-            <option <?php  if  ( $home['provincia']=="Guadalajara")  echo  'selected'  ;  ?>value="Guadalajara">Guadalajara</option>
-            <option <?php  if  ( $home['provincia']=="Guipuzcoa")  echo  'selected'  ;  ?>value="Guipuzcoa">Guipúzcoa</option>
-            <option <?php  if  ( $home['provincia']=="Huelva")  echo  'selected'  ;  ?>value="Huelva">Huelva</option>
-            <option <?php  if  ( $home['provincia']=="Huesca")  echo  'selected'  ;  ?>value="Huesca">Huesca</option >
-            <option <?php  if  ( $home['provincia']=="IslasBaleares")  echo  'selected'  ;  ?>value="IslasBaleares"> Islas Baleares</option>
-            <option <?php  if  ( $home['provincia']=="Jaen")  echo  'selected'  ;  ?>value="Jaen">Jaén</option>
-            <option <?php  if  ( $home['provincia']=="La Coruña")  echo  'selected'  ;  ?>value="La Coruña">La Coruña</option >
-            <option <?php  if  ( $home['provincia']=="La Rioja")  echo  'selected'  ;  ?>value="La Rioja">La Rioja </option>
-            <option <?php  if  ( $home['provincia']=="Las Palmas")  echo  'selected'  ;  ?>value="Las Palmas">Las Palmas</option>
-            <option <?php  if  ( $home['provincia']=="Leon")  echo  'selected'  ;  ?>value="Leon">León</option>
-            <option <?php  if  ( $home['provincia']=="Lerida")  echo  'selected'  ;  ?>value="Lerida">Lérida</option >
-            <option <?php  if  ( $home['provincia']=="Lugo")  echo  'selected'  ;  ?>value="Lugo">Lugo</option>
-            <option <?php  if  ( $home['provincia']=="Malaga")  echo  'selected'  ;  ?>value="Malaga">Málaga</option>
-            <option <?php  if  ( $home['provincia']=="Madrid")  echo  'selected'  ;  ?>value="Madrid">Madrid</option>
-            <option <?php  if  ( $home['provincia']=="Murcia")  echo  'selected'  ;  ?>value="Murcia">Murcia</option>
-            <option <?php  if  ( $home['provincia']=="Navarra")  echo  'selected'  ;  ?>value="Navarra">Navarra </option >
-            <option <?php  if  ( $home['provincia']=="Orense")  echo  'selected'  ;  ?>value="Orense">Orense</option>
-            <option <?php  if  ( $home['provincia']=="Palencia")  echo  'selected'  ;  ?>value="Palencia">Palencia</option>
-            <option <?php  if  ( $home['provincia']=="Pontevedra")  echo  'selected'  ;  ?>value="Pontevedra">Pontevedra</option>
-            <option <?php  if  ( $home['provincia']=="Salamanca")  echo  'selected'  ;  ?>value="Salamanca">Salamanca</option>
-            <option <?php  if  ( $home['provincia']=="Segovia")  echo  'selected'  ;  ?>value="Segovia">Segovia</option >
-            <option <?php  if  ( $home['provincia']=="Sevilla")  echo  'selected'  ;  ?>value="Sevilla">Sevilla</option>
-            <option <?php  if  ( $home['provincia']=="Soria")  echo  'selected'  ;  ?>value="Soria">Soria </option>
-            <option <?php  if  ( $home['provincia']=="Tarragona")  echo  'selected'  ;  ?>value="Tarragona">Tarragona</option>
-            <option <?php  if  ( $home['provincia']=="Tenerife")  echo  'selected'  ;  ?>value="Tenerife">Tenerife</option >
-            <option <?php  if  ( $home['provincia']=="Teruel")  echo  'selected'  ;  ?>value="Teruel">Teruel</option>
-            <option <?php  if  ( $home['provincia']=="Toledo")  echo  'selected'  ;  ?>value="Toledo">Toledo</option>
-            <option <?php  if  ( $home['provincia']=="Valencia")  echo  'selected'  ;  ?>value="Valencia">Valencia</option>
-            <option <?php  if  ( $home['provincia']=="Valladolid")  echo  'selected'  ;  ?>value="Valladolid">Valladolid</option>
-            <option <?php  if  ( $home['provincia']=="Vizcaya")  echo  'selected'  ;  ?>value="Vizcaya">Vizcaya</option>
-            <option <?php  if  ( $home['provincia']=="Zamora")  echo  'selected'  ;  ?>value="Zamora">Zamora</option >
-            <option <?php  if  ( $home['provincia']=="Zaragoza")  echo  'selected'  ;  ?>value="Zaragoza">Zaragoza</option>
+            <!-- <option <?php  //if  ( $home['provincia']=="Alava")  echo  'selected'  ;  ?> value="Alava">Álava</option>
+            <option <?php  //if  ( $home['provincia']=="Albacete")  echo  'selected'  ;  ?> value="Albacete">Albacete</option >
+            <option <?php  //if  ( $home['provincia']=="Alicante")  echo  'selected'  ;  ?> value="Alicante"> Alicante</option>-->
+            <!-- ETC -->
          </select> 
     </p>
     <p>
