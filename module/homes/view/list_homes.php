@@ -12,6 +12,7 @@
                         <td><b>Localidad</b></th>
                         <td><b>Provincia</b></th>
                         <td><b>Capacidad</b></th>
+                        <td><b>Precio</b></th>
                     <th class="td1"><b>Accion</b></th>
                     </tr>
                 </thead>
@@ -27,7 +28,8 @@
                     	   	echo '<td><br>'. $row['nombre'] . '</br></td>';
                             echo '<td><br>'. $row['localidad'] . '</br></td>';
                             echo '<td><br>'. $row['provincia'] . '</br></td>';
-                    	   	echo '<td><br>'. $row['capacidad'] . '</br></td>';
+                            echo '<td><br>'. $row['capacidad'] . '</br></td>';
+                            echo '<td><br>'. $row['precionoche'] . '€</br></td>';
                             echo '<td><br>';
                     	   	echo "<a  class='read'  id='".$row['nombre']."'>Read</a>";
                     	   	echo '&nbsp;';

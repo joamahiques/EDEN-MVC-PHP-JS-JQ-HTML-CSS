@@ -19,6 +19,27 @@ function getQueryVariable(variable) {
     return num;
     }
 
+    function protecturl() {
+        /////////protect url
+        $.ajax({
+          type : 'GET',
+          //url  : 'model/functions.php?op=controluser',
+          url  : 'components/login/controller/controller-login.php?&op=controluser',
+          //dataType: 'json',
+      })
+        .done(function(data){			
+          console.log(data)		
+          if(data=="okay"){
+              setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
+          }else if (data=="ok"){
+            loginauto();
+                //setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
+                
+            }
+        })
+        .fail( function(response){console.log(response)	});
+        }
+
 $(document).ready(function(){
     
     // function datePic() {
@@ -81,4 +102,18 @@ toastr.options = {
              $('#submenu').fadeOut( "slow" );
       })
   }
-});/////////ebd ready
+////////////logout inactivity
+  setInterval(function(){ 
+		$.ajax({
+			type : 'GET',
+			url  : 'components/login/controller/controller-login.php?&op=actividad',
+			success :  function(response){						
+				if(response=="inactivo"){
+                    alert("Se ha cerrado la cuenta por inactividad");
+                    logoutauto();
+					//setTimeout('window.location.href = "components/login/controller/controller-login.php?&op=logout";',1000);
+				}
+			}
+		});
+	}, 120000);
+});/////////end ready

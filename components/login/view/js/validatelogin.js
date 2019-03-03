@@ -122,7 +122,8 @@ $(document).ready(function(){
 					localStorage.setItem("type", data.type);
 					localStorage.setItem("avatar", data.avatar);
 					localStorage.setItem("email", data.email);
-					setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
+					//setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
+					setTimeout(' window.location.href = ""; ',1000);
 				}else if (data=="okay") {
 					InsertCompra(); //en cart.js
 				}else if(data=="No coinciden los datos") {
@@ -210,19 +211,8 @@ $(document).ready(function(){
 ///////////logout
 	$("#btnlogout").on('click', function () {
 		console.log("logout");
-		$.ajax({
-			type : 'GET',
-			url  : 'components/login/controller/controller-login.php?&op=logout',
-		})
-			.done(function() {
-				
-				localStorage.removeItem('user');
-				localStorage.removeItem('avatar');
-				localStorage.removeItem('type')
-				setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
-				
-
-		})
+		logoutauto();
+		
 	});
 
 //////////////////////////////
@@ -257,8 +247,13 @@ $(document).ready(function(){
 
 	//close modal
 	$('.cd-user-modal').on('click', function(event){
+		console.log(localStorage.getItem('type'));
 		if( $(event.target).is($form_modal) || $(event.target).is('.cd-close-form') ) {
 			$form_modal.removeClass('is-visible');
+			
+			if((!localStorage.getItem('type'))||(localStorage.getItem('type')!='admin')){
+				 window.location.href = "index.php?page=controllerhome&op=list"; 
+			}
 		}	
 	});
 	//close modal when clicking the esc keyboard button
@@ -377,3 +372,58 @@ jQuery.fn.putCursorAtEnd = function() {
     	}
 	});
 };
+
+function logoutauto(){
+	$.ajax({
+		type : 'GET',
+		url  : 'components/login/controller/controller-login.php?&op=logout',
+	})
+		.done(function() {
+			
+			localStorage.removeItem('user');
+			localStorage.removeItem('avatar');
+			localStorage.removeItem('type');
+			localStorage.removeItem('email');
+			setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
+			
+
+	})
+}
+function loginauto(){
+	//console.log("madre mia");
+					var $form_modal = $('.cd-user-modal'),
+                    $form_login = $form_modal.find('#cd-login'),
+                    $form_signup = $form_modal.find('#cd-signup'),
+                    $form_forgot_password = $form_modal.find('#cd-reset-password'),
+                    $form_modal_tab = $('.cd-switcher'),
+                    $tab_login = $form_modal_tab.children('li').eq(0).children('a'),
+                    $tab_signup = $form_modal_tab.children('li').eq(1).children('a'),
+                    $forgot_password_link = $form_login.find('.cd-form-bottom-message a'),
+                    $back_to_login_link = $form_forgot_password.find('.cd-form-bottom-message a'),
+                    $main_nav = $('.main-nav');
+                    
+                    $("#formregister")[0].reset();
+                    $("#formlogin")[0].reset();
+                    $(".has-error").removeClass('has-error');
+                    $('.is-visible').removeClass('is-visible');
+                    $form_modal.addClass('is-visible');	
+                    //show the selected form
+                    ( $(event.target).is('.cd-signup') ) ? signup_selected() : login_selected();
+                    function login_selected(){
+                        $form_login.addClass('is-selected');
+                        $form_signup.removeClass('is-selected');
+                        $form_forgot_password.removeClass('is-selected');
+                        $tab_login.addClass('selected');
+                        $tab_signup.removeClass('selected');
+                    }
+                
+                    function signup_selected(){
+                        $form_login.removeClass('is-selected');
+                        $form_signup.addClass('is-selected');
+                        $form_forgot_password.removeClass('is-selected');
+                        $tab_login.removeClass('selected');
+                        $tab_signup.addClass('selected');
+                    }
+
+
+}

@@ -303,7 +303,19 @@ div#map{
 	margin-bottom: 0px;
 	margin-top: 0px;
 }
-
+.fright {
+	text-align: right;
+	width: auto !important;
+	margin-bottom: 2em;
+}
+.fa.fa-shopping-cart{
+    font-size: 35px;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    
+}
 .oh {
 	overflow: hidden;
 }
@@ -345,7 +357,15 @@ div#map{
     overflow: hidden;
     
   }
-  
+  .fotohome{
+    background: url(../img/masqi-predeter.jpg) center  no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+  }
+ 
   .slider {
     display: flex;
     width: 500%;

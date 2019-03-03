@@ -71,6 +71,11 @@
 							<input name="habitaciones" id="habitaciones"" type="text" placeholder="Num de habitaciones" value="<?php echo $_POST?$_POST['habitaciones']:""; ?>" />
 							<span id="e_habitaciones"" class="styerror"></span>
 						</p>
+						<p>
+							<!-- <label for="habitaciones">Num de Habitaciones</label> -->
+							<input name="precionoche" id="precionoche" type="text" placeholder="Precio por noche" value="<?php echo $_POST?$_POST['precionoche']:""; ?>" />
+							<span id="e_precio"" class="styerror"></span>
+						</p>
 					</div>
 					<div >
 						<p>

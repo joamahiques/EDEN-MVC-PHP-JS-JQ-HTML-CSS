@@ -28,7 +28,11 @@ $(document).ready(function(){
                         '<br><span>Localidad:   <span id="localidad">'+list.localidad+'</span></span></br>'+
                         '<br><span>Provincia:   <span id="prov">'+list.provincia+'</span></span></br>'+
                         '<br><span>Capacidad Total:     <span id="capacidad">'+list.capacidad+'</span></span></br>'+
+                        '<div class="fright">'+
+                        '<a  class="read"  id="'+list.nombre+'">READ MORE</a>'+
+                        '</div>'+
                         '</div>'
+                        
                     ) 
                 });
                

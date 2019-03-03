@@ -3,11 +3,14 @@
     $path = $_SERVER['DOCUMENT_ROOT'] . '/www/EDEN/'; ///opt/lampp/htdocs
     include($path . "module/homes/model/DAOhomes.php");
     include($path . "module/homes/model/validation.php");
+    //include($path . "model/functions.php");
     @session_start();
-    // print_r($_SERVER['DOCUMENT_ROOT']);
-    // die();
-   
     
+    echo "<script>";
+    echo "protecturl();";
+    echo "</script>";
+    
+    if(isset ($_SESSION['type'])&&($_SESSION['type'])==='admin'){
     switch($_GET['op']){
     ////////////LIST   
         case 'list';
@@ -23,7 +26,9 @@
     			$callback = 'index.php?page=503';
 			    die('<script>window.location.href="'.$callback .'";</script>');
     		}else{
-                include("module/homes/view/list_homes.php");
+               
+                    include("module/homes/view/list_homes.php");
+           
     		}
             break;
     /////////CREATE        
@@ -89,7 +94,9 @@
                     try{
                         $DAOhome = new DAOhome();
                         $rdo = $DAOhome->update_home($_POST);
-                        //print_r($_POST);
+                        // print_r($_POST);
+                        // print_r($rdo);
+                        // die();
                         if(!$rdo){
                             echo ("FALSEEEEE update controller");
                         }
@@ -207,3 +214,4 @@
         include("vista/include/error404.php");
         break;
     }
+}

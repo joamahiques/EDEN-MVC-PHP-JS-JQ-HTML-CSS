@@ -21,6 +21,7 @@ $(document).ready(function () {
                  $('#nombre').html(data.nombre);
                  $('<div></div>').attr('id','Div1').appendTo('#modalcontent');
                  $('<div></div>').attr('id','Div2').appendTo('#modalcontent');
+                 $('<div></div>').attr('id','preciocasa').appendTo('#modalcontent');
                 
                  $("#Div1").html(
                             '<br><span>Localidad:   <span id="localidad">'+data.localidad+'</span></span></br>'+
@@ -40,7 +41,8 @@ $(document).ready(function () {
                             '<br><span>Años de la casa:     <span id="edadcasa">'+data.edadcasa+'</span></span></br>'+
                             '<br><span>Fecha de alta:     <span id="fecha">'+data.fecha+'</span></span></br>'
                  )
-              
+                 $("#preciocasa").html('<br><span>Precio:     <span id="precio">'+data.precionoche+'</span></span></br>')
+
                 modal(data.nombre);
             
          })
@@ -55,14 +57,19 @@ $(document).ready(function () {
 
 function modal(data){
                 $("#details_home").show();
+
                 $("#home_modal").dialog({
+                    open: function() {
+                        $(".ui-dialog-buttonset").prepend("<span class='ui-button ' >Nº Noches:<input type='number' name='quantity' id='quantity' class='quantity' min='1' max='20' step='1'value='1'></span>");
+                    },
                     title:data,
                     //width: 500, 
                     height: 570, 
                     resizable: "false",
                     modal: "true", 
                     buttons: {
-                        Reservar: function(){ $(this).dialog("close");},
+                        
+                        Reservar: function(){ addToCart();$(this).dialog("close");},//$(this).dialog("close")
                         Ok: function () {
                             $(this).dialog("close");
                         }

@@ -63,9 +63,10 @@
 
 					$value = get_object_vars($rlt);
 					$_SESSION['type'] = $value['type'];
-					$_SESSION['user'] = $value['name'];
-					$_SESSION['avatar'] = $value['avatar'];
+					//$_SESSION['user'] = $value['name'];
+					//$_SESSION['avatar'] = $value['avatar'];
 					$_SESSION['mail'] = $value['email'];
+					$_SESSION['tiempo'] = time();
 					echo json_encode($value);
 					//echo 'ok';
 					exit();
@@ -91,9 +92,10 @@
 						else
 							
 						$_SESSION['type'] = $value['type'];
-						$_SESSION['user'] = $value['name'];
-						$_SESSION['avatar'] = $value['avatar'];
+						//$_SESSION['user'] = $value['name'];
+						//$_SESSION['avatar'] = $value['avatar'];
 						$_SESSION['mail'] = $value['email'];
+						$_SESSION['tiempo'] = time();
 						//echo 'ok';
 						echo json_encode($value);
 						exit();
@@ -106,18 +108,46 @@
 
 			
 			case 'logout':
-				error_reporting(0);
-				session_unset($_SESSION['type']);
-				session_unset($_SESSION['user']);
-				session_unset($_SESSION['avatar']);
-				session_destroy();
-				echo "home";
-				// if(session_destroy()) {
-				// 	echo "home";
-				// }
+					error_reporting(0);
+					session_unset($_SESSION['type']);
+					//session_unset($_SESSION['user']);
+					//session_unset($_SESSION['avatar']);
+					session_unset($_SESSION['mail']);
+					session_unset($_SESSION['tiempo']);
+					session_destroy();
+					echo "home";
+					// if(session_destroy()) {
+					// 	echo "home";
+					// }
 			break;
 				
-   
+		case 'controluser':
+				if (!isset ($_SESSION['type'])||($_SESSION['type'])!='admin'){
+			
+					if(isset ($_SESSION['type'])&&($_SESSION['type'])!='admin'){
+						echo 'okay';
+						exit();
+					}
+					echo 'ok';
+					exit();
+		
+					// http://localhost/www/EDEN/index.php?page=controller_homes&op=list
+				}
+				
+			break;
+		case 'actividad':
+					if (!isset($_SESSION["tiempo"])) {  
+						echo "activo";
+					} else {  
+						if((time() - $_SESSION["tiempo"]) >= 600) {  
+							echo "inactivo"; 
+							exit();
+						}else{
+							echo "activo";
+							exit();
+						}
+					}
+			break;
         default:
 				include("view/include/error/error404.php");
 		break;

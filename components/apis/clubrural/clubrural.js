@@ -3,11 +3,11 @@
 $(document).ready(function(){
     
 /////////////////////////////////SHOP
-    
+
     if (document.getElementById('inicioshop')) {
         // var pro = $(this).val();
          var pro= sessionStorage.getItem('provincia');
-         //console.log(pro+" provi");
+         console.log(pro+" provi");
          
         
         if (pro==='null'){//si provincia es null(entramos por menu)
@@ -21,26 +21,25 @@ $(document).ready(function(){
                 success: function (data) {
                 //console.log(data); 
                 $.each(data, function(i, item) {
-                    //console.log(i); 
-                    //console.log(pro); 
+                    // console.log(i); 
+                    // console.log(pro); 
                     if(i === pro){
                         var idprovi=item.id;
                                 $.ajax({
                                     type: "GET",
-                                    url:"https://api.clubrural.com/api.php?claveapi="+keyclub+"&type=provincias&idprov="+idprovi
-                                    
+                                    url:"https://api.clubrural.com/api.php?claveapi="+keyclub+"&type=provincias&idprov="+idprovi,
+                                    dataType: "xml",
                                 })
                                 .done(function( data, textStatus, jqXHR ) {
-                                    //console.log(data);
+                                    console.log(data);
                                     var nombre;
                                     var provincia;
                                     var img;
                                     var cont=0;
                                     $('#shopclub').empty();
                                     $("#h2club").append("Más ofertas en "+pro+":");
-                                    //$('<div></div>').attr('id','list1').attr('class','flex1').appendTo('#inicioclub');
                                     $(data).find("alojamiento").each(function () {
-                                        
+                                       // console.log('find');
                                         nombre = $(this).find('nombre').text();
                                         provincia = $(this).find('provincia').text();
                                         img = $(this).find('img-medium').text();
@@ -93,6 +92,7 @@ $(document).ready(function(){
             $.ajax({
                 type: "GET",
                 url:url,
+                dataType: "xml",
             })
             .done(function( data, textStatus, jqXHR ) {
                 console.log(data);
@@ -129,7 +129,7 @@ $(document).ready(function(){
         
      
     }///end if
-    
+
 });//end ready
 
 function geolocation(id) {
@@ -139,14 +139,16 @@ function geolocation(id) {
             var longitude=position.coords.longitude;
             //console.log("Found your location nLat : "+latitude+" nLang :"+longitude);
             url="https://api.clubrural.com/api.php?claveapi="+keyclub+"&type=gmaps&lat="+latitude+"&lng="+longitude+"&limitkm="+numeroAleatorio(1,80);
-            //console.log(url);
+            console.log(url);
+            console.log('geolocation');
         
             $.ajax({
                 type: "GET",
                 url:url,
+                dataType: "xml",
             })
             .done(function( data, textStatus, jqXHR ) {
-                //console.log(data);
+                console.log(data);
                 var nombre;
                 var provincia;
                 var img;

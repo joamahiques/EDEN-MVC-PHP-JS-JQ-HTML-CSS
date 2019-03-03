@@ -1,4 +1,10 @@
- th.td1.sorting{
+#tablecart{
+    min-height: 200px;
+}
+
+
+
+th.td1.sorting{
     min-width: 230px;
 }
 

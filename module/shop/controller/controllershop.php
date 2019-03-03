@@ -3,8 +3,10 @@
 	$path = $_SERVER['DOCUMENT_ROOT'] . '/www/EDEN/'; ///opt/lampp/htdocs
     include($path . "module/shop/model/DAOShop.php");
 	@session_start();
-	//echo ('datatable confavo');
-	//die();
+	////tiempo para logout
+    if (isset($_SESSION["tiempo"])) {  
+	    $_SESSION["tiempo"] = time(); //Devuelve la fecha actual
+	}
 	
     switch ($_GET['op']) {
        

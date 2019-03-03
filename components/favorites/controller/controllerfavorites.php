@@ -1,4 +1,5 @@
 <?php
+@session_start();
     $path = $_SERVER['DOCUMENT_ROOT'] . '/www/EDEN/';
 
     include($path ."components/favorites/model/DAOFavorites.php");
@@ -19,7 +20,8 @@
             case 'readfavorites':
                 try{
                     $DAOFavorites = new DAOFavorites();
-                    $rdo = $DAOFavorites->readFavorites($_GET['email']);
+                    //$rdo = $DAOFavorites->readFavorites($_GET['email']);
+                    $rdo = $DAOFavorites->readFavorites($_SESSION['mail']);
         
                 }catch (Exception $e){
                     echo json_encode("error");

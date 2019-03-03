@@ -19,6 +19,7 @@
                             echo '<br>Localidad:  '. $row['localidad'] . '</br>';
                             echo '<br id="jolo">Provincia:  '. $row['provincia'] . '</br>';
                             echo '<br>Capacidad:  '. $row['capacidad'] . '</br>';
+                            echo '<br>Precio Noche:  '. $row['precionoche'] . '</br>';
                             echo '</br>';
                             echo '</br>';
                             // echo '<a class="btn1" href="index.php?page=controller_homes&op=read&id='.$row['nombre'].'">READ MORE</a>';

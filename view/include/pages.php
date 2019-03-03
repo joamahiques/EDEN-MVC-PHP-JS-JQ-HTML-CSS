@@ -19,6 +19,9 @@
 			case "controller-contact";
 				include("module/contact/controller/".$_GET['page'].".php");
 				break;
+			case "controller-cart";
+				include("module/cart/controller/".$_GET['page'].".php");
+				break;
 			case "controller-login";
 				include("module/login/view/login.html");
 				break;

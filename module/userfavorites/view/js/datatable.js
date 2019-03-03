@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
-    console.log(localStorage.getItem("email"));
-    console.log("email");
+    //console.log(localStorage.getItem("email"));
+    //console.log("email");
     var url= 'module/userfavorites/controller/conFavo.php?op=datatable&email='+localStorage.getItem("email");
     var source =
             {

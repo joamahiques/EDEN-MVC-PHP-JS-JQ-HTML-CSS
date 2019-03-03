@@ -71,6 +71,11 @@
             <input name="habitaciones" id="habitaciones"" type="text" placeholder="habitaciones" value="<?php echo $home['habitaciones'];?>" />
             <span id="e_habitaciones"" class="styerror"></span>
         </p>
+        <p>
+            <label for="precionoche" class="update">Precio por noche</label>
+            <input name="precionoche" id="precionoche" type="text" placeholder="Precio por noche" value="<?php echo $home['precionoche'];?>" />
+            <span id="e_precio"" class="styerror"></span>
+        </p>
     </div>
     <div class="medio">
         <p>

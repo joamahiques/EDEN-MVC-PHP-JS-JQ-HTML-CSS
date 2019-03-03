@@ -26,11 +26,12 @@
 			$fecha=$datos[fecha];
 			$fechacons=$datos[fechacons];
 			$edadcasa=calculaAnos();
-			//echo ($edadcasa);
+			$precionoche=$datos[precionoche];
+			// echo ($precionoche);
 			// die();
 			
-			$sql ="INSERT INTO `casas`(`ID`, `nombre`, `localidad`, `provincia`, `nombrePropietario`, `dni`, `email`, `telefono`, `capacidad`, `habitaciones`, `entera`, `servicios`, `actividades`, `fecha`, `fechacons`, `edadcasa`)
-		    VALUES (null,'$nombre','$localidad','$provincia','$nombrePropietario','$dni','$email','$telefono','$capacidad','$habitaciones','$entera','$servicios','$actividades','$fecha','$fechacons','$edadcasa')";
+			$sql ="INSERT INTO `casas`(`ID`, `nombre`, `localidad`, `provincia`, `nombrePropietario`, `dni`, `email`, `telefono`, `capacidad`, `habitaciones`, `entera`, `servicios`, `actividades`, `fecha`, `fechacons`, `edadcasa`, `precionoche`)
+		    VALUES (null,'$nombre','$localidad','$provincia','$nombrePropietario','$dni','$email','$telefono','$capacidad','$habitaciones','$entera','$servicios','$actividades','$fecha','$fechacons','$edadcasa', '$precionoche')";
             
             $conexion = connect::con();
             $res = mysqli_query($conexion, $sql);
@@ -79,13 +80,16 @@
 			$fecha=$datos[fecha];
 			$fechacons=$datos[fechacons];
 			$edadcasa=calculaAnos();
-        	
+			$precionoche=$datos[precionoche];
+			
         	$sql = " UPDATE casas SET localidad='$localidad',provincia='$provincia',nombrePropietario='$nombrePropietario',dni='$dni',email='$email',telefono='$telefono',capacidad='$capacidad',
-			habitaciones='$habitaciones', entera='$entera', servicios='$servicios',actividades='$actividades',fecha='$fecha',fechacons='$fechacons',edadcasa='$edadcasa' WHERE nombre='$nombre'";
-            
+			habitaciones='$habitaciones', entera='$entera', servicios='$servicios',actividades='$actividades',fecha='$fecha',fechacons='$fechacons',edadcasa='$edadcasa' ,precionoche='$precionoche' WHERE nombre='$nombre'";
+
+
             $conexion = connect::con();
             $res = mysqli_query($conexion, $sql);
-            connect::close($conexion);
+			connect::close($conexion);
+			print_r($res);
 			return $res;
 		}
 		

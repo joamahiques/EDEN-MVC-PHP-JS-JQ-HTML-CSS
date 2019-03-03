@@ -1,6 +1,8 @@
 <?php
 	@session_start();
+	session_regenerate_id();
 	include("view/include/top-page.php");
+
 ?>
 <div id="wrapper">		
     <div id="header">    	
