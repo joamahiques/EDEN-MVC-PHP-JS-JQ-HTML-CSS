@@ -1,5 +1,6 @@
 #tablecart{
     min-height: 200px;
+    text-align: center;
 }
 
 
@@ -50,7 +51,10 @@ th.td1.sorting{
     background: linear-gradient(to bottom, #585858 0%, #53534a 100%);
     border: 1px solid #53534a;
 } */
+table.dataTable tfoot th, table.dataTable tfoot td{
+    border-top: 1px solid #b7b7b6
 
+}
 table.dataTable.no-footer {
     border-bottom: 1px solid #b7b7b6
 }

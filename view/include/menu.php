@@ -11,7 +11,7 @@
 								<li><a href="index.php?page=controller-contact&op=list" data-tr="Contacto"></a></li>
 								<!-- <li><a href="index.php?page=controller-login&op=view" data-tr="Login"></a></li> --> 
 								<li><a data-tr="Login" class="main-nav"></a></li>
-								<li><a href="index.php?page=controller-cart&op=view"><i class="fa fa-shopping-cart"></i></a></li>
+								<li><a href="index.php?page=controller-cart&op=view"><i class="fa fa-shopping-cart"><span></span></i></a></li>
 							</ul>
 						</nav>
 						<div class="clear"></div>

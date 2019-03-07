@@ -11,7 +11,12 @@
           "Casas": "Cases",
           "Favoritos": "Favorits",
           "Conocenos": "Nosaltres",
-          "Contacto": "Contacte"
+          "Contacto": "Contacte",
+          "CRUD": "CRUD",
+          "Tienda": "Tenda",
+          "Perfil": "Perfil",
+          "Salir": "Ixir",
+          "Login": "Login"
         }
     }
 }

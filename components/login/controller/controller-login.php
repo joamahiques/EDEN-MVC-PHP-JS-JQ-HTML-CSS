@@ -139,7 +139,7 @@
 					if (!isset($_SESSION["tiempo"])) {  
 						echo "activo";
 					} else {  
-						if((time() - $_SESSION["tiempo"]) >= 600) {  
+						if((time() - $_SESSION["tiempo"]) >= 60000) {  
 							echo "inactivo"; 
 							exit();
 						}else{

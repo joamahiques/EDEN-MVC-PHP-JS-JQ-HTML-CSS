@@ -310,11 +310,22 @@ div#map{
 }
 .fa.fa-shopping-cart{
     font-size: 35px;
-    -moz-transform: scaleX(-1);
+    /* -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    
+    -webkit-transform: scaleX(-1); */
+    /* transform: scaleX(-1);
+     */
+}
+.fa.fa-shopping-cart span{
+    font-size: 20px;
+    background-color: #2f889a;
+    right: 0.25rem;
+    top: -0.8rem;
+    padding: 2px 6px;
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    border-radius: 50%;
 }
 .oh {
 	overflow: hidden;

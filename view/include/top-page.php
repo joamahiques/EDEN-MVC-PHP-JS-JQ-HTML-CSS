@@ -50,7 +50,4 @@
 		<script src="module/shop/view/js/functionsshop.js"></script>
 		<script src="module/cart/view/js/functionscart.js"></script> 
 
-		<!-- <script async defer
-    		src="https://maps.googleapis.com/maps/api/js?key="+keymaps+"&callback=initMap">
-		</script> -->
 	</head>

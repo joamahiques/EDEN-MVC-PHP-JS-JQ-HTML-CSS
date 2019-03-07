@@ -11,7 +11,12 @@
           "Casas": "Houses",
           "Favoritos": "Favorites",
           "Conocenos": "About us",
-          "Contacto": "Contact"
+          "Contacto": "Contact",
+          "CRUD": "CRUD",
+          "Tienda": "Shop",
+          "Perfil": "Profile",
+          "Salir": "Logout",
+          "Login": "Login"
         }
        
     }

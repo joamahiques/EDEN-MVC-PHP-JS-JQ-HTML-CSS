@@ -83,4 +83,5 @@ function modal(data){
                         duration: 1000
                     }
                 });
+                
 }

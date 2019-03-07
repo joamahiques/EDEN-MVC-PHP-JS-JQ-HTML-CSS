@@ -13,7 +13,6 @@ $(document).ready(function () {
                 
             type: "GET",
             dataType: "json",
-            //url: "components/favorites/controller/controllerfavorites.php?op=readfavorites&email="+localStorage.getItem("email"),
             url: "components/favorites/controller/controllerfavorites.php?op=readfavorites",
         })
         .done(function( data, textStatus, jqXHR ) {

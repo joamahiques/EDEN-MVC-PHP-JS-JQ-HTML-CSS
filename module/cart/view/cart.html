@@ -12,18 +12,52 @@
                             <td><b>Nombre</b></th> 
                             <td><b>Precio</b></th>
                             <td><b>Noches</b></th>
-                            <td><b>Total</b></th>
-                            <th>Eliminar</th>  
+                            <td><b>Eliminar</b></th>
+                            <td><b>Total</b></th>  
                             
                         </tr>
                     </thead>
                     <tbody id="cartBody">
                     </tbody>
+                    <tfoot><td></td><td></td><td></td><td></td><td ><b>Total:   <span id='pricetotal'>0</span>€</b></td></tfoot>
                     </table>
                   </div> 
                 
             </div>
-            <div><p style="text-align:center" id="btnscart"><a class="btn" href="index.php?page=controllershop&op=view">Volver</a></p></div>
+            <div><p style="text-align:center" id="btnscart"><a class="btn" href="index.php?page=controllershop&op=view">Volver</a><a id="comprarbtn"class="btn">Comprar</a></p></div>
         </div>
     </div>
 </div>
+
+<!-- modal window compra-->
+<section id="confirmcompra">
+    <div id="details_compra" hidden>
+        <div id="details">
+            <div id="container">
+                <div class="grid2">
+                        <div id="tablecart">
+                                <div id="cart_wrapper" class="dataTables_wrapper no-footer">
+                                 <table id="cart" class="dataTable no-footer" role="grid">
+                                    <thead>
+                                        <tr role="row">
+                                            <td ><b>Nombre</b></th> 
+                                            <td><b>Precio</b></th>
+                                            <td><b>Noches</b></th>
+                                            <td><b>Total</b></th>   
+                                        </tr>
+                                    </thead>
+                                    <tbody id="contentcompra">
+                                    </tbody>
+                                    <tfoot><td></td><td></td><td></td><td ><b>Total:   <span id='pricetotalfinal'>0</span>€</b></td></tfoot>
+                                    </table>
+                                  </div> 
+                                
+                            </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+   
+</section>
