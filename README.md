@@ -7,6 +7,7 @@
 * CRUD
 * Login y registro
 * Carrito, con js y php (guardado de carro logout y autorelleno en login)
+* Control de acceso par favoritos y compra.
 * Cambio de tabla en bbdd al comprar.
 * Diferente menú en relación al usuario
 * Logout, session destroy
@@ -17,6 +18,8 @@
 * APIS para Provincias, buscador de casas rurales y google maps
 * Buscador en todas las páginas.
 * Idiomas en js y json
+* Proteccion de URL para CRUD
+* Logout inactividad.
 * Módulos:
     * Home
     * Homes(CRUD)
@@ -56,18 +59,21 @@
 * CRUD
 * Login y register.
 * Cart, width js and php.
+* Access control for favorites and purchase.
 * Change of table in bbdd when buying.
 * Different menu in relation to the user
 * Logout, session destroy
 * Validation against database, PHP,
 * Validation in js (with radios and checkbox),
-* 404 and 503
-* Delete and Deleta All
-* Separate components
-* $AJAX
-* APIS for Provinces, search of rural houses and google maps
+* 404 and 503.
+* Delete and Deleta All.
+* Separate components.
+* $AJAX.
+* APIS for Provinces, search of rural houses and google maps.
 * searcher on all pages.
-* languages in js and json
+* languages in js and json.
+* URL protect.
+* Logout inactivity.
 * Modules:
     * Home
     * Homes (CRUD)
