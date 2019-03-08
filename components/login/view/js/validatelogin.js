@@ -122,10 +122,9 @@ $(document).ready(function(){
 					localStorage.setItem("type", data.type);
 					localStorage.setItem("avatar", data.avatar);
 					localStorage.setItem("email", data.email);
+					logincart();
 					//setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
 					setTimeout(' window.location.href = ""; ',1000);
-				}else if (data=="okay") {
-					InsertCompra(); //en cart.js
 				}else if(data=="No coinciden los datos") {
 					console.log("error-login fallo logeandote");
 						$("#error_login").fadeIn(1000, function(){						
@@ -210,8 +209,10 @@ $(document).ready(function(){
 	});
 ///////////logout
 	$("#btnlogout").on('click', function () {
-		console.log("logout");
+		//console.log("logout!!!!!");
+		deletelogout()
 		logoutauto();
+		
 		
 	});
 
@@ -384,6 +385,7 @@ function logoutauto(){
 			localStorage.removeItem('avatar');
 			localStorage.removeItem('type');
 			localStorage.removeItem('email');
+			deletelogout();
 			setTimeout(' window.location.href = "index.php?page=controllerhome&op=list"; ',1000);
 			
 

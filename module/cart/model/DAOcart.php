@@ -15,8 +15,7 @@
                 $cantidad = $row['Qty'];
                 $total = $row['Total']; 
             
-            // $sql ="INSERT INTO `carro`(`nombre`, `cantidad`, `precio`, `total`)
-            // VALUES ('$nombre','$cantidad','$precio','$total')";
+       
             $sql ="INSERT INTO `carro`(`ID`,`IDclient`, `IDproducto`, `nombre`, `cantidad`, `precio`, `total`) 
             VALUES (null,(SELECT id from users WHERE email='$user') ,(SELECT id from casas WHERE nombre='$nombre'),'$nombre' ,'$cantidad',
             (SELECT precionoche from casas WHERE nombre='$nombre'),(SELECT (precionoche*$cantidad)as total from casas WHERE nombre='$nombre'))";
@@ -39,7 +38,22 @@
 
         }
 
-
+        function confirm_purchase($user){
+            $sql = "INSERT INTO compras (id_user,id_product,cantidad,precio,total) 
+            SELECT IDclient, IDproducto, cantidad, precio, total FROM carro 
+            WHERE IDclient=(SELECT id from users where email='$user')";
+            
+             
+            $conexion = connect::con();
+            $res = mysqli_query($conexion, $sql);
+            connect::close($conexion);
+             
+             $sql ="DELETE FROM `carro` WHERE IDclient=(SELECT id from users where email='$user')";
+             $conexion = connect::con();
+             $res = mysqli_query($conexion, $sql);
+             connect::close($conexion);
+             return $res;
+        }
 
 
     }

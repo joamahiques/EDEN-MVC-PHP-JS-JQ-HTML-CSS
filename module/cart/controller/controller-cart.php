@@ -47,6 +47,15 @@
                     exit;
                 }
             break;
+            case 'confirmpurchase';
+            try {
+                $daocart = new DAOcart();
+                $rlt = $daocart->confirm_purchase($_SESSION['mail']);
+            } catch (Exception $e) {
+                echo json_encode("error");
+                exit();
+            }
+            break;
             default;
                 include("vista/include/error404.php");
             break;
