@@ -1,7 +1,8 @@
-#1er Proyecto MVC, PHP, JS, JQ, HTML, CSS
-#####Proyecto de casas rurales, con buscador, carrito, favoritos, login
+# 1er Proyecto MVC, PHP, JS, JQ, HTML, CSS  
 
-######**Funcionalidad de la aplicación:**
+##### Proyecto de casas rurales, con buscador, carrito, favoritos, login
+
+###### **Funcionalidad de la aplicación:**
 
 * Arquitectura MVC
 * CRUD
@@ -28,7 +29,7 @@
     * Contact
     * Cart
 
-######**Otras tecnologías:**
+###### **Otras tecnologías:**
 
 * [Datatables.net](https://datatables.net/)
 * [Jqwidgets.com] (https://www.jqwidgets.com/)(solución al problema en páginas donde no hay selector en el DOM)
@@ -44,6 +45,7 @@
 * Css
 * Constantes js para Keys
 * [Gravatar](https://es.gravatar.com/)
+* Moesif CORS.
 * Componenetes:
     * Modal
     * Favoritos
@@ -53,7 +55,7 @@
 
 * * *
 
-######**Functionality of the application:**
+###### **Functionality of the application:**
 
 * Architecture MVC
 * CRUD
@@ -83,7 +85,7 @@
     * Cart
 
 
-######**Other technologies:**
+###### **Other technologies:**
 
 * [Datatables.net](https://datatables.net/)
 * [Jqwidgets.com](https://www.jqwidgets.com/)(solution to the problem on pages where there is no selector in the sun)
@@ -99,6 +101,7 @@
 * Css
 * Const js for keys
 * [Gravatar](https://es.gravatar.com/)
+* Moesif CORS.
 * Components:
     * Modal
     * Favorites
