@@ -25,6 +25,9 @@
 			case "controller-login";
 				include("module/login/view/login.html");
 				break;
+			case "controller-profile";
+				include("module/profile/view/profile.html");
+				break;
 			case "404";
 				include("view/include/error/error404.php");
 				break;
